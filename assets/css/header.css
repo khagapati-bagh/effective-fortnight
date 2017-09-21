@@ -1,0 +1,18 @@
+body{
+	/*background-color: #111720;*/
+}
+#background{
+	position: absolute;
+	z-index: 1;
+}
+#wrapper{
+	position: relative;
+	z-index: 2;
+}
+#header{
+	background-color:rgba(00,00,00,0.70);
+	display:block;
+}
+#header a{
+	text-decoration: none;
+}
