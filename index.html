@@ -3,10 +3,11 @@
 	<title>IGNITE 2K17</title>
 	<meta charset='utf-8'/>
 <!--	
-	<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>-->
-	<!-- google fonts -->
-	 <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato|Roboto" rel="stylesheet"> 
+	<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+	 <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato|Roboto" rel="stylesheet"> -->
 	<link type='text/css' rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/	font-awesome.min.css'/>
+	<!--
+	<link href="https://fonts.googleapis.com/css?family=Advent+Pro|Baloo+Bhaijaan|Bevan|Bree+Serif|Roboto" rel="stylesheet"> -->
 	<link type='text/css' rel='stylesheet' href='assets/css/reset.css'/>
 	<link type='text/css' rel='stylesheet' href='assets/css/animate.css'/>
 	<link type='text/css' rel='stylesheet' href='assets/css/index.css'/>
@@ -22,30 +23,37 @@
 
 <!-- #page -->
 <section id="page">
-	<header id="header" class='animated fadeInUp'>
-		<!--<nav class='header-nav'>
-			<span><a class='bounce animated' href='#'>LOGIN</a></span>
-			<span><a href='#'>REGISTER</a></span>
-		</nav>
+	<section id="ground" class='animated fadeInRight'>
+		<nav id="page-nav-control">
+			<!--
+				<span class="show-events animated "><a href='#'><i class='fa fa-home'></i></a></span>
+			<span class="show-events animated "><a href='#'><i class='fa fa-sign-in'></i></a></span>
+			<span class="show-events animated "><a href='#'><i class='fa fa-user-plus'></i></a></span>
+			<span class="show-events animated "><a href='#'><i class='fa fa-tasks'></i></a></span>
 		-->
-	</header>
-	<section id="ground" class='animated fadeInLeft'>
-		<nav id="page-nav" class="page-nav-a">
-			<span class="show-events animated "><a href='#'>LOGIN</a></span>
-			<span class="show-events animated "><a href='#'>REGISTER</a></span>
-			<span class="show-events animated "><a href='#'>EVENTES</a></span>
+	
+			<!--<span class="show-login"><a href='#'>Login</a></span>
+			<span class="show-register"><a href='#'>Register</a></span>-->
+			<span id="show-events" class="show-events"><a href='#'>Events</a></span>
 		</nav>
-		<nav id="page-nav" class='event-list'>
-			<span><a href='#'>CODEXTER</a></span>
-			<span><a href='#'>DATAMAZE</a></span>
-			<span><a href='#'>WARARNA</a></span>
-			<span><a href='#'>ADMAD</a></span>
-			<span><a href='#'>MINDSPARK</a></span>
-			<span><a href='#'>INGENIOUS</a></span>
-			<span><a href='#'>NEXUS</a></span>
+		<!-- #page-nav -->
+		<nav id="page-nav" class=' event-list pop-box'>
+			<div class='list-item'>
+				<span><a href='#'>CODEXTER</a></span>
+				<span><a href='#'>DATAMAZE</a></span>
+			</div>
+			<div class='list-item'>
+				<span><a href='#'>WARARNA</a></span>
+				<span><a href='#'>ADMAD</a></span>
+				<span><a href='#'>MINDSPARK</a></span>
+			</div>
+			<div class='list-item'>
+				<span><a href='#'>INGENIOUS</a></span>
+				<span><a href='#'>NEXUS</a></span>
+			</div>
 		</nav>
 	</section>
-	<footer id="footer" class='animated fadeInRight'>
+	<footer id="footer" class='animated fadeInLeft'>
 		<nav class='footer-nav'>
 			<span><a href='#'><i class='fa fa-home'></i></a></span>
 			<span><a href='#'><i class='fa fa-question-circle'></i></a></span>
