@@ -1,0 +1,131 @@
+.events{
+	padding-top: 140px;
+}
+
+/* .events-nav */
+.events-nav a{
+	font-weight:900;
+}
+/* .events-article */
+.event-article .panel{
+	background-color: rgba(00,00,00,0.80);
+}
+.event-article .panel-title{
+	text-align: center;
+	font-weight: 900;
+}
+.event-article .panel-body{
+	font-family: 'Open Sans', sans-serif;
+	color:#fff;
+	height:300px;
+	overflow: auto;
+}
+
+/* panel title */
+.event-article .panel-heading .panel-title{
+	text-align: center;
+}
+/* panel description */
+.ev-description{
+	font-size: 16px;
+	word-spacing: 7px;
+	line-height: 21px;
+}
+/* panel image */
+.ev-img{
+	height:290px;
+}
+.ev-img img{
+	width:100%;
+	height:100%;
+}
+.ev-vt{
+	display: flex;
+	flex-direction: row;
+}
+.ev-venue{
+	display: block;
+	width:50%;
+	text-align: left;
+}
+.ev-time{
+	display: block;
+	width:50%;
+	text-align: right;
+}
+
+
+/* panel rules */
+.ev-rule h4{
+	display: inline-block;
+	padding:10px 0;
+	color:#337AB7;
+}
+.event-article .list-group-item{
+	background-color: transparent;
+}
+
+/* events heads profile */
+.ev-profile{
+	display: block;
+	text-align: center;
+	padding:20px 0;
+}
+.ev-profile img{
+	display: inline-block;
+	width:120px;
+	height:120px;
+	border-radius: 50%;
+	border:7px solid #fff;
+	margin:15px 0;
+	/* add box shadow */
+}
+.ev-profile-name{
+	font-size:16px;
+	font-weight: 700;
+	padding:10px 0;
+	color:#337AB7;
+}
+.ev-profile-email{
+	display: block;
+	color:#337AB7;
+	font-size:14px;
+	font-weight:700px;
+	padding:7px 0;
+}
+.ev-profile-social span a{
+	color:#337AB7;
+	font-size:14px;
+	display: inline-block;
+	padding:10px;
+	background-color: #fff;
+	border-radius: 50%;
+	margin:0 5px;
+
+}
+
+
+.ev-img{	
+	
+}
+
+/* events animation */
+.ev-description{
+	display: none;
+}
+.ev-rule{
+	display: none;
+}
+.ev-head{
+	display: none;
+}
+
+.code,.data{
+	display: none;
+}
+
+
+/* don't change its position and don't add the code for .ev-img, .ev-description and .ev-head below this line */
+.show-event{
+	display: block;
+}
