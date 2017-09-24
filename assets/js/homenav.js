@@ -21,21 +21,21 @@ $(document).ready(function(){
 		headernav.removeClass('animated bounceInRight');
 		/* animation for nitk logo */
 		nitklogo.show();
-		nitklogo.addClass('animated bounceInDown').one(animationend, function(){
-		nitklogo.removeClass('animated bounceInDown');
-		/* animation for main page title */
-		intro.show();
-		intro.addClass('animated bounceInLeft').one(animationend, function(){
-			intro.removeClass('animated bounceInLeft');
+		nitklogo.addClass('animated bounceInUp').one(animationend, function(){
+			nitklogo.removeClass('animated bounceInUp');
+			/* animation for main page title */
+			intro.show();
+			// Timeout for crypto text
+      		SPY.text( 'op' );
 			/* animation for register button */
 			register.show();
-			register.addClass('animated bounceInUp').one(animationend, function(){
-				register.removeClass('animated bounceInUp');
+			register.addClass('animated bounceInDown').one(animationend, function(){
+				register.removeClass('animated bounceInDown');
 				pal.show();ral.show();
 				pal.addClass('animated bounceInRight');
 				ral.addClass('animated bounceInLeft');
 			});/*register*/
-		});/*intro*/
+		
 	});/*nitklogo*/
 	});/*headernav*/
 });
