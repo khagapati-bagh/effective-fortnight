@@ -2,14 +2,19 @@
   "name": "npmapp",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "server": "live-server"
   },
   "keywords": [],
   "author": "Akshay Sharma",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^4.17.10"
+    "lodash": "^4.17.10",
+    "nodemon": "^1.17.3"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.0"
   }
 }
