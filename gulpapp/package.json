@@ -12,6 +12,7 @@
   "author": "Akshay",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.3"
   }
 }
