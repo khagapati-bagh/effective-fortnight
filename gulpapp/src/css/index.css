@@ -1,0 +1,54 @@
+/* css for body */
+body{
+	margin:0px;
+	padding:0px;
+	background-color: #393939; /* dark-grey = #393939*/
+}
+
+/*#page*/
+#page{
+	height:100vh;	
+	width:80%;
+	padding:0px 10%;
+	background-color: #393939;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	font-weight:bold;
+	font-family: 'Ubuntu';
+}
+#page h1{
+	display: block;
+	text-align: left;
+	color:#FF5A09;/*dark orange */
+	font-size:25px;
+	margin:0;
+	padding:0px;
+	padding-bottom:30px;
+}
+#page h5{
+	display: block;
+	width:30%;
+	text-align: left;
+	font-size:18px;
+	color:#fff;
+	margin:0px;
+	padding:0px;
+	padding-bottom: 25px;
+}
+#page button{
+	background-color:#be4f0c;/* orange yellow */
+	color:#fff;
+	font-size:14px;
+	font-weight: bold;
+	border-radius: 7px;
+	padding:10px 15px;
+	border:none;
+	transition: all .5s;
+	cursor: pointer;
+}
+#page button:hover{
+	background-color:#ec7f37;
+	color:#ddd;
+}
