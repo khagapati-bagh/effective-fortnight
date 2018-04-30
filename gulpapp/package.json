@@ -1,0 +1,17 @@
+{
+  "name": "gulpapp",
+  "version": "1.0.0",
+  "description": "Example App Using Gulp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Gulp"
+  ],
+  "author": "Akshay",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
