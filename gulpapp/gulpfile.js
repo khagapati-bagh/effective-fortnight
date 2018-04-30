@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+let cleanCSS = require('gulp-clean-css');
 
 //log message
 gulp.task('message',function(){
@@ -19,5 +20,10 @@ gulp.task('copyHtml',function(){
 //minify the image
 
 //minify the css
+gulp.task('minify-css', () => {
+  return gulp.src('src/css/*.css')
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(gulp.dest('dist/css'));
+});
 
 //minify the javascript
