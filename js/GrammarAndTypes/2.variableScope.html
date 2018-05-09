@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+	<title>Variable Scope</title>
+</head>
+<body>
+	<h1>Yep! Checkout the console</h1>
+<script>
+var z = 20;
+function fun(){
+	var x = 5;
+	console.log("Value of x = ",x);//x = 5
+	console.log("Value of y = ",y)//y = undefined for all calls before y's declaration and 6 after that
+	console.log("value of z = ",z)//z = 20
+}
+console.log("value of x = " + x)// Reference error : x is not defined
+fun();// x = 5 and y = undefined and z = 20
+var y = 6;
+fun();// x = 5 and y = 6 and z = 20
+
+if(true){
+	var a = 5;
+}
+console.log("value of a = " + a)//a = 5
+
+if(true){
+	let b = 5;
+}
+console.log("value of b = " + b)// Reference Error : b is not defined
+</script>
+</body>
+</html>
