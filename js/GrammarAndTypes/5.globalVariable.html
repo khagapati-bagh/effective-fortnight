@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+	<title>Global Variable</title>
+</head>
+<body>
+	<h1>Global Variable : Check Console</h1>
+<script>
+	fun();//Checkout the functions inner value changes too!!
+	function fun(){
+		console.log("value of a = " + a);//global value
+		var b = 'local b';
+		console.log("value of b = " + b);//local value
+		console.log("Global value of a =  ",window.a + " and value of b = " + window.b);//global values
+	}
+	var a = 'global value';
+	var b = 'b global';
+	fun();
+</script>
+</body>
+</html>
