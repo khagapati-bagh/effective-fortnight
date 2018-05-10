@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+	<title>Function Hoisting</title>
+</head>
+<body>
+	<h1>Function Hoisting : Check Console</h1>
+<script>
+	/* Function Declaration : Hoisted */
+	foo();//"bar"
+	function foo(){
+		console.log('bar');
+	}
+
+	//Function Expression Not Hoisted
+
+	//baz();//TypeError : baz is not a function
+	var baz = function(){
+		console.log('bar 2');
+	};
+
+	console.log("After Function Expressoin Declaration : ")
+	baz();
+</script>
+</body>
+</html>

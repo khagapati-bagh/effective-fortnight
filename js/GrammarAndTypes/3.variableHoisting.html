@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+	<title>Variable Hoisting</title>
+</head>
+<body>
+	<h1>Variable Hoisting : Checkout Console</h1>
+<script>
+	console.log('Value of y = ' + y);//undefined
+	var y = 5;
+	console.log('Value of y = ' + y);//y = 5
+
+	var myvar = 'global value';
+
+	(function(){
+		var myvar;
+		console.log('Value of myvar = ',myvar);//undefined
+		myvar = 'local variable';
+	})();
+
+//Not Hoisting With const and let
+	console.log('Value of x = ',x);//Reference Error No Hoisting With const and let
+	let x = 5;
+	console.log('Value of b = ' + b);//Reference Error
+	const b = 45;
+	console.log("After Declaration:\n x = ",x," and b = ",b);
+	//TypeError Test
+	b =90; 
+	console.log("value of b = ",b);
+
+</script>
+</body>
+</html>
