@@ -1,8 +1,9 @@
-<h1>Hero  {{ hero.name }} Details & {{thor}}</h1>
-<div><span>ID : {{hero.id }}</span></div>
-<div><span>Name : {{ hero.name }}</span></div>
+<h2>My Heroes</h2>
+
 <div>
-	<label> Hero Name :
-		<input [(ngModel)]="hero.name" placeholder='Name'/>
-	</label>
+<ul class='heroes'>
+  <li *ngFor="let hero of heroes">
+    <span class='badge'>{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
 </div>
