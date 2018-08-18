@@ -1,0 +1,207 @@
+body { 
+    background: url(ignite_night.svg) no-repeat bottom center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+/*font-family: 'Montserrat', sans-serif;
+font-family: 'Oswald', sans-serif;*/
+
+
+/*--------------------------------*/
+/*          #wrapper              */
+/*--------------------------------*/
+
+#wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+}
+
+#logo-nitk img{
+    width: auto;
+    height: 115px;
+    padding: 20px;
+}
+/*
+#social a:hover{
+    background-color:#fff;
+    color:#d9002e;
+
+}*/
+/*-------------------------------*/
+/*         #main                */
+/*------------------------------*/
+#main{
+	display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#ign-logo img{
+    width: auto;
+    height: 160px;
+    padding-top: 33px;
+}
+#text span{
+    padding:0px;
+    display: block;
+    font-weight: bold;
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Oswald', sans-serif;
+    word-spacing: 6px;
+    letter-spacing: 10px;
+    color: #f8f8f8;
+    font-size: 40px;
+}
+
+
+
+/*-------------------------------*/
+/*          form                */
+/*-------------------------------*/
+#form-social{
+    display:flex;
+    justify-content:center;
+    align-content: center;
+}
+#form-social{
+    background-color:#d9002e;
+    border-radius:2px;
+}
+.sub-form{
+    display: flex;
+}
+.sub-form input:focus{
+    outline:none;
+}
+.sub-form{
+    padding-right:20px;
+    background-color:#fff;
+    border-radius: 2px 20px 0px 2px;
+}
+.sub-form input{
+    font-size: 14px;
+    line-height: 14px;
+    border: 1px solid #ddd;
+    padding-left:10px;
+    color: #555;
+    border:none;
+    background-color:transparent;
+}
+.sub-form button{
+    font-size:14px;
+    padding:0px 10px;
+    background-color:transparent;
+    border-radius: 0px 70px 0px 0px;
+    border:none;
+    cursor:pointer;
+}
+.sub-form input[type='email']:focus,button:focus{
+    outline:none;
+}
+
+
+/*------------------------------*/
+/*          clock               */
+/*------------------------------*/
+#clock{
+    width:500px;
+    padding:40px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.ent{
+    display: flex;
+    border:5px solid #f8f8f8;
+    height:80px;
+    width:80px;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    border-radius:50%;
+    margin:0px 5px;
+}
+.ent span{
+    font-family:'Oswald', sans-serif;
+    font-size:16px;
+    font-weight: bold;
+    display: block;
+}
+
+#social{
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+
+#social a{
+    border-radius:2px;
+    margin:0px 5px;
+    width:35px;
+    height: 35px;
+    color: #d9002e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background: #D9002e;
+}
+
+
+/*----------------------------------------*/
+/*              Mobile responsive           */
+/*----------------------------------------*/
+@media (max-width:992px)
+{
+    border-top-style: w
+    #wrapper{
+        display: block;
+        text-align: center;
+    }
+    #logo-nitk{
+        display:none;
+    }
+    #clock{
+        display: none;
+    }
+    #main{
+        width:100%;
+    }
+    #ign-logo img{
+        width: auto;
+        height: 141px;
+        margin: 70px 0px 0px 0px;
+    }
+    #form-social{
+        display:block;
+        background:transparent;
+        width:80%;
+    }
+    #text{
+        margin: 28px 0px 2px;
+    }
+    #text span{
+        font-size: 29px;
+        letter-spacing: 10px;
+    }
+    .sub-form{
+        border-radius:2px;
+        margin:35px 0px;
+    }
+    .sub-form input{
+        padding:10px 15px;
+        width:calc(100% - 40px);
+    }
+    .sub-form button{
+        width:40px;
+        display:flex;
+        justify-content: center;
+        align-items:center;
+    }
+}

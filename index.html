@@ -1,53 +1,191 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html lang="en">
+
 <head>
-  <title>IgNITe</title>
-  <meta name="viewport" content="initial-scale=1">
+	<title>IGNITE 2K18</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Oswald" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/demo.css">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-
-  <!-- Accessing from public folder -->
-  <link rel="stylesheet" href="default.css">
-  <link rel="stylesheet" href="effects.css">
-
+		
+		<noscript><link href="css/index.css" rel="stylesheet"></noscript>
 </head>
-
 <body>
-    <div class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside">
-        <div class="global-overlay" style="opacity: 1; transform: translateX(100%);">
-          <div class="overlay skew-part">
-            <div id="stars"></div>
-            <div id="stars2"></div>
-            <div id="stars3"></div>
-          </div>
+<div id="wrapper">
+	<div id="logo-nitk">
+		<img src="images/emblem.gif" alt="NITK" />
+	</div>
+	<div id="main">
+		<div id="ign-logo">
+			<img src="images/logo_day.png" alt="Ignite" />
+		</div>
+		<div id="text">
+			<span>COMING SOON</span>
+		</div>
+		<!--
+		<div id="clock">
+			<div class='ent'>
+				<span id="" class='time-handle'>35</span>
+				<span>Days</span>
+			</div>
+			<div class='ent'>
+				<span id="" class='time-handle'>5</span>
+					<span>Hours</span>
+			</div>
+			<div class='ent'>
+				<span id="" class='time-handle'>35</span>
+				<span>Minutes</span>
+			</div>
+			<div class='ent'>
+				<span id="" class='time-handle'>35</span>
+				<span>Seconds</span>
+			</div>
+		</div>-->
+		<div id="clock" class="countdown countdown-container">
+			<div class="clock row">
+				<div class="clock-item clock-days countdown-time-value col-sm-6 col-md-3">
+					<div class="wrap">
+						<div class="inner">
+							<div id="canvas-days" class="clock-canvas"></div>
+		 
+							<div class="text">
+								<p class="val">0</p>
+								<p class="type-days type-time">Days</p>
+							</div><!-- /.text -->
+						</div><!-- /.inner -->
+					</div><!-- /.wrap -->
+				</div><!-- /.clock-item -->
+		 
+				<div class="clock-item clock-hours countdown-time-value col-sm-6 col-md-3">
+					<div class="wrap">
+						<div class="inner">
+							<div id="canvas-hours" class="clock-canvas"></div>
+		 
+							<div class="text">
+								<p class="val">0</p>
+								<p class="type-hours type-time">Hours</p>
+							</div><!-- /.text -->
+						</div><!-- /.inner -->
+					</div><!-- /.wrap -->
+				</div><!-- /.clock-item -->
+		 
+				<div class="clock-item clock-minutes countdown-time-value col-sm-6 col-md-3">
+					<div class="wrap">
+						<div class="inner">
+							<div id="canvas-minutes" class="clock-canvas"></div>
+		 
+							<div class="text">
+								<p class="val">0</p>
+								<p class="type-minutes type-time">Minutes</p>
+							</div><!-- /.text -->
+						</div><!-- /.inner -->
+					</div><!-- /.wrap -->
+				</div><!-- /.clock-item -->
+		 
+				<div class="clock-item clock-seconds countdown-time-value col-sm-6 col-md-3">
+					<div class="wrap">
+						<div class="inner">
+							<div id="canvas-seconds" class="clock-canvas"></div>
+		 
+							<div class="text">
+								<p class="val">0</p>
+								<p class="type-seconds type-time">Seconds</p>
+							</div><!-- /.text -->
+						</div><!-- /.inner -->
+					</div><!-- /.wrap -->
+				</div><!-- /.clock-item -->
+			</div><!-- /.clock -->
+		</div><!-- /.countdown-wrapper -->
+		<!--
+		<div id="social">
+				<a href='#'><i class='fa fa-facebook'></i></a>
+				<a href='#'><i class='fa fa-instagram'></i></a>
+				<a href='#'><i class='fa fa-youtube'></i></a>
+			</div> -->
+		<div id="form-social">
+			<!-- <form class='sub-form'>
+				<input type='email' placeholder="Subscribe" />
+				<button><i class='fa fa-arrow-right'></i></button>
+			</form> -->
+			<div id="social-btn">
+				<button> Subscribe</button>
+			</div>
+			<div id="social">
+				<a href='#'><i class='fa fa-facebook'></i></a>
+				<a href='#'><i class='fa fa-instagram'></i></a>
+				<a href='#'><i class='fa fa-youtube'></i></a>
+			</div>
+		</div>
+
+		
+	
+	</div>
+
+	
+		<!--
+    <footer class="footer">
+        <div id="footer-social">
+
+            <a href='#'><i class='fa fa-facebook'></i></a><br />
+            <a href='#'><i class='fa fa-instagram'></i></a>
+            <a href='#'><i class='fa fa-youtube'></i></a>
         </div>
-        <section id="left-side" class="" style="opacity: 1;">
-            <div class="menu-container">
-              <img src="/img/final.gif" class="brand-logo openmenu mCS_img_loaded">
-              <nav class="nav-hide">
-                <ul>
-                  <li><a href="#">HOME</a></li>
-                  <li><a href="#">COMPETITIONS</a></li>
-                  <li><a href="#">HOSPITALITY</a></li>
-                  <li><a href="#">CONTACT</a></li>
-                  <li><a href="#">ABOUT</a></li>
-                </ul>
-              </nav>
-            </div>
-          <center>
-            <div class="social-icons">
-              <img src="/img/backf.png" class="ing-responsive" />
-              <a href="#"><i class="fa fa-facebook"></i></a>
-              <a href="#"><i class="fa fa-twitter"></i></a>
-              <a href="#"><i class="fa fa-google-plus"></i></a>
-              <a href="#"><i class="fa fa-linkedin"></i></a>
-            </div>
-          </center>
-        </section>
-        <footer>
-      
-        </footer>
-      </div>
-</body>
+    </footer>
+-->
+	<div id="logo-nitk">
+		<img src="images/eng.png" alt="NITK" />
+	</div>
+</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			var currentTime = new Date().getHours();
+			  if (5 <= currentTime&&currentTime <= 18) {
+			  	$('head').append("<link rel='stylesheet' href='css/index.css' type='text/css'>");
+			  }
+			  else{
+				$('head').append("<link rel='stylesheet' href='css/index-night.css' type='text/css'>");
+			  }
+		});
+		</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="js/kinetic.js"></script>
+	<script type="text/javascript" src="js/jquery.final-countdown.js"></script>
+	<script type="text/javascript">  
+		$('document').ready(function() {
+			'use strict';
+			
+			$('.countdown').final_countdown({
+				'start': 1362139200,
+				'end': 1388461320,
+				'now': 1387461319,
+				seconds: {
+					borderColor: '#f8f8f8',
+					borderWidth: '6'
+				},
+				minutes: {
+					borderColor: '#f8f8f8',
+					borderWidth: '6'
+				},
+				hours: {
+					borderColor: '#f8f8f8',
+					borderWidth: '6'
+				},
+				days: {
+					borderColor: '#f8f8f8',
+					borderWidth: '6'
+				} 
+				     
+			});
+			
+		});
+	</script>
+	</body>
+
 </html>
