@@ -24,12 +24,15 @@ function init() {
         blending: THREE.AdditiveBlending
     });
 
+    var spriteMap = new THREE.TextureLoader().load( "js/images/ice_min.png" );
+    var spriteMaterial = new THREE.SpriteMaterial( { map: spriteMap, color: 0xffffff } );
+    //var sprite = new THREE.Sprite( spriteMaterial );
+   // scene.add( sprite );
     for (var i = 0; i < 1000; i++) {
-
-        particle = new THREE.Sprite(material);
+        //creating the sprite marterial here
+        particle = new THREE.Sprite(spriteMaterial);
 
         initParticle(particle, i * 10);
-
         scene.add(particle);
     }
 
