@@ -1,35 +1,76 @@
-#header{
+/*-------------------------------------------*/
+/*          #wrapper                    */
+/*-------------------------------------------*/
+
+#wrapper{
     position: absolute;
     z-index:1;
+    width: 100%;
+}
+
+#header{
+    display: flex;
+    width:100%;
+    justify-content: space-between;
 }
 #header-logo img{
-    width:75px;
+    width:95px;
     height:auto;
     padding:20px;
 }
 
+#header-left, #header-right{
+    max-width:50%;
+    max-width:50%;
+    display: flex;
+    align-items: center;
+}
 
 
+/*----------------------------------*/
+/*----------------------------------*/
+/*----------------------------------*/
+
+#page #logo{
+    display: inline-block;
+    background-color:rgba(255,255,255,0.80);
+    border:3px solid #fff;
+    border-radius:50px 0px 50px;
+}
+#page #logo img{
+    height:150px;
+}
 
 
 /*-----------------------------------*/
 /*          #footer                  */
 /*-----------------------------------*/
 #footer{
-
     background-color:rgba(34,34,34,0.80);
     position: absolute;
     top: calc(100vh - 56px);
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: calc(100% - 20px);
+    padding:0px 20px 0px 0px;
     font-family: "Helvetica Neue",Helvetica,"Lucida Grande",Arial,Sans-Serif;
     text-transform: uppercase;
 }
 #footer-left{
+    display:flex;
+    justify-content: left;
+    align-items:center;
     width:100%;
 }
+#footer-left button{
+    font-size:26px;
+    padding:15px;
+    color:#fff;
+    background-color: #222;
+    border:none;
+}
+
 #footer-right{
     display:flex;
     justify-content: flex-end;
@@ -59,46 +100,4 @@
     font-size:14px;
 }
 
-/*----------------------------*/
-/*----------------------------*/
-/*----------------------------*/
-#home-wrapper{
-    display:none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    background: rgba(00,00,00,0.80);
-    z-index: 2000;
-}
-#home-options{
-    display:flex;
-    justify-content: flex-start;
-    flex-wrap:wrap;
-    width:768px;
-    padding:150px calc( ( 100% - 768px ) / 2) ;
-}
-#home-options a{
-    display:flex;
-    width:calc(20% - 40px);
-    padding:20px 10px;
-    margin:10px;
-    background-color:;
-    color:#fff;
-    text-decoration:none;
-    justify-content: center;
-    align-items:center;
-    flex-direction: column;
-    font-size:40px;
-}
-#home-options a span{
-    font-size:14px;
-    display:block;
-    width:calc(100% - 20px);
-    padding:25px 10px 10px;
-    text-align: center;
-    font-family: "Helvetica Neue",Helvetica,"Lucida Grande",Arial,Sans-Serif;
-}
-#home-options a:hover{
-    background-color:rgba(255,255,255,0.70);
-}
+
