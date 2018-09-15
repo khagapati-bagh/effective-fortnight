@@ -7,54 +7,149 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
 	 crossorigin="anonymous">
-	<style>
-		body {
-			background-color: #000000;
-			margin: 0px;
-			overflow: hidden;
-		}
-
-		a {
-			color: #0078ff;
-		}
-	</style>
+	 <link rel="stylesheet"
+	 href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Old+Standard+TT|Oswald|Ubuntu" rel="stylesheet">
+	<link rel="stylesheet" type='text/css' href='css/scroll.css' />
 	<link rel="stylesheet" type='text/css' href='css/particle.css' />
+	<script>
+			const NAV_OPENED_CLASS = "fa-bars";
+const NAV_CLOSED_CLASS = "fa-times";
+
+window.onload = function() {
+  const navBtn = document.getElementById("nav-btn");
+  const classes = navBtn.classList;
+  const navbar = document.getElementById("navbar");
+
+  navBtn.addEventListener("click", function() {
+    if (classes.contains(NAV_OPENED_CLASS)) {
+      openNav();
+    } else {
+      closeNav();
+    }
+  });
+  const navLinks = document.getElementsByClassName("nav-link");
+  [...navLinks].forEach(function(elem) {
+    elem.addEventListener("click", function() {
+      closeNav();
+    });
+  });
+
+  function closeNav() {
+    classes.remove(NAV_CLOSED_CLASS);
+    classes.add(NAV_OPENED_CLASS);
+    navbar.classList.add("hide");
+  }
+  function openNav() {
+    classes.remove(NAV_OPENED_CLASS);
+    classes.add(NAV_CLOSED_CLASS);
+    navbar.classList.remove("hide");
+  }
+};
+</script>
 </head>
 
 <body>
 	<div id="wrapper">
+
+			<nav id="navbar" class="hide">
+					<ul class="nav-links">
+						<li><a class="nav-link" href="#"><i class="fa fa-home"></i> Home</a></li>
+						<li><a class="nav-link" href="#">Events</a></li>
+						<li><a class="nav-link" href="#">Teams</a></li>
+						<!-- <li><a class="nav-link" href="#">Projects</a></li> -->
+						<li><a class="nav-link" href="#"><i class="fa fa-envelope"></i> Contact</a></li>
+					</ul>
+					<ul class="nav-links-2">
+						<li><a class="nav-link" href="#">Registration</a></li>
+						<li><a class="nav-link" href="#">Gallary</a></li>
+						<li><a class="nav-link" href="#">Sponsors</a></li>
+						<li><a class="nav-link" href="#">About Ignite & Ignite'18</a></li>
+					</ul>
+				</nav>
+
 		<header id="header">
 			<div id="header-left">
-				<div id="header-bg">
-				</div>
-				<div id="header-fg">
-					<div id="header-logo">
-						<img src="images/nitk_white.png" alt="" />
-						<img src="images/logo_day.png" alt="" />
-					</div>
+				<div id="header-nitk">
+					<img src="images/nitk_white.png" alt="" />
 				</div>
 			</div>
+
 			<div id="header-right">
-				<div id="header-logo">
-					<img src="images/klaten.png" />
+				<div id="header-kla">
+					<img src="images/klaart.svg" alt="" />
 				</div>
 			</div>
 		</header>
 
 		<div id="page">
-			<div id="logo">
-				<img src="images/logo_day.png" alt="IGNITE-18"/>
+
+			<div id="page-info">
+				<div id="page-box">
+						<img src="images/artboard.svg" alt=""/>
+				</div>
+			</div>
+		</div>
+		
+		<div id="control">
+			<div id="cal">
+				<div class="event animated slideInLeft" id="e1">
+					<div class="event-header">
+						<span>Registrations</span>
+					</div>
+					<div class='event-description'>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id tellus et sem dictum varius id sed tortor.
+						 Duis tincidunt malesuada metus.
+						</p>
+					</div>
+				</div>
+
+				<div class="event animated" id="e2">
+					<div class="event-header">
+						<span>Events</span>
+					</div>
+					<div class='event-description'>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id tellus et sem dictum varius id sed tortor.
+						 Duis tincidunt malesuada metus.
+						</p>
+					</div>
+				</div>
+
+				<div class="event animated" id="e3">
+					<div class="event-header">
+						<span>The Online Events</span>
+					</div>
+					<div class='event-description'>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id tellus et sem dictum varius id sed tortor.
+						 Duis tincidunt malesuada metus.
+						</p>
+					</div>
+				</div>
+				<!--
+					<div class="register">
+					<a href='#'>Register Now <i class='fa fa-arrow-right'></i></a>
+				</div>-->
+			</div>
+			<div id="car">
+				<nav id="side-nav">
+					<li><a id="s1" href="#"> Registration <i class='fa fa-circle'></i></a></li>
+					<li><a id="s2" href="#"> Events <i class='fa fa-circle'></i></a></li>
+					<li><a id="s3" href="#"> Online Events <i class='fa fa-circle'></i></a></li>
+				</nav>
 			</div>
 		</div>
 
 		<footer id="footer">
 			<div id="footer-left">
 				<div class="footer-menu">
-					<button><i class="fas fa-th"></i></button>
+					<span><i  id="nav-btn" class="fas fa-th"></i></span>
 				</div>
 			</div>
 			<div id="footer-logo">
-				<img src="images/logo_day.png" alt=""/>
+				<img src="images/logo_day.png" alt="" />
 			</div>
 			<div id="footer-right">
 				<!-- <span>Powered By</span> -->
@@ -91,6 +186,15 @@
 	<script src="js/tween.min.js"></script>
 	<script src="js/mythree.js"></script>
 	<!-- jquery -->
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  <script src="js/scroll.js"></script>
+  <script>
+		$("#footer").animateCss('bounse');
+	</script>
 </body>
 
 </html>

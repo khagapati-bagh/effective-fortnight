@@ -1,167 +1,166 @@
+var container, stats;
+var camera, scene, renderer, particle;
+var mouseX = 0, mouseY = 0;
 
-			var container, stats;
-			var camera, scene, renderer, particle;
-			var mouseX = 0, mouseY = 0;
+var windowHalfX = window.innerWidth / 2;
+var windowHalfY = window.innerHeight / 2;
 
-			var windowHalfX = window.innerWidth / 2;
-			var windowHalfY = window.innerHeight / 2;
+init();
+animate();
 
-			init();
-			animate();
+function init() {
 
-			function init() {
+	container = document.createElement('div');
+	document.body.appendChild(container);
 
-				container = document.createElement( 'div' );
-				document.body.appendChild( container );
+	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 5000);
+	camera.position.z = 1000;
 
-				camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 5000 );
-				camera.position.z = 1000;
+	scene = new THREE.Scene();
+	scene.background = new THREE.Color(0x000000);
 
-				scene = new THREE.Scene();
-				scene.background = new THREE.Color( 0x000000 );
+	var material = new THREE.SpriteMaterial({
+		map: new THREE.CanvasTexture(generateSprite()),
+		blending: THREE.AdditiveBlending
+	});
 
-				var material = new THREE.SpriteMaterial( {
-					map: new THREE.CanvasTexture( generateSprite() ),
-					blending: THREE.AdditiveBlending
-				} );
+	for (var i = 0; i < 1000; i++) {
 
-				for ( var i = 0; i < 1000; i++ ) {
+		particle = new THREE.Sprite(material);
 
-					particle = new THREE.Sprite( material );
+		initParticle(particle, i * 10);
 
-					initParticle( particle, i * 10 );
+		scene.add(particle);
+	}
 
-					scene.add( particle );
-				}
+	renderer = new THREE.CanvasRenderer();
+	renderer.setPixelRatio(window.devicePixelRatio);
+	renderer.setSize(window.innerWidth, window.innerHeight);
+	container.appendChild(renderer.domElement);
 
-				renderer = new THREE.CanvasRenderer();
-				renderer.setPixelRatio( window.devicePixelRatio );
-				renderer.setSize( window.innerWidth, window.innerHeight );
-				container.appendChild( renderer.domElement );
+	//stats = new Stats();
+	//container.appendChild( stats.dom );
 
-				//stats = new Stats();
-				//container.appendChild( stats.dom );
+	document.addEventListener('mousemove', onDocumentMouseMove, false);
+	document.addEventListener('touchstart', onDocumentTouchStart, false);
+	document.addEventListener('touchmove', onDocumentTouchMove, false);
 
-				document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-				document.addEventListener( 'touchstart', onDocumentTouchStart, false );
-				document.addEventListener( 'touchmove', onDocumentTouchMove, false );
+	//
 
-				//
+	window.addEventListener('resize', onWindowResize, false);
 
-				window.addEventListener( 'resize', onWindowResize, false );
+}
 
-			}
+function onWindowResize() {
 
-			function onWindowResize() {
+	windowHalfX = window.innerWidth / 2;
+	windowHalfY = window.innerHeight / 2;
 
-				windowHalfX = window.innerWidth / 2;
-				windowHalfY = window.innerHeight / 2;
+	camera.aspect = window.innerWidth / window.innerHeight;
+	camera.updateProjectionMatrix();
 
-				camera.aspect = window.innerWidth / window.innerHeight;
-				camera.updateProjectionMatrix();
+	renderer.setSize(window.innerWidth, window.innerHeight);
 
-				renderer.setSize( window.innerWidth, window.innerHeight );
+}
 
-			}
+function generateSprite() {
 
-			function generateSprite() {
+	var canvas = document.createElement('canvas');
+	canvas.width = 16;
+	canvas.height = 16;
 
-				var canvas = document.createElement( 'canvas' );
-				canvas.width = 16;
-				canvas.height = 16;
+	var context = canvas.getContext('2d');
+	var gradient = context.createRadialGradient(canvas.width / 2, canvas.height / 2, 0, canvas.width / 2, canvas.height / 2, canvas.width / 2);
+	gradient.addColorStop(0, 'rgba(255,255,255,1)');
+	gradient.addColorStop(0.2, 'rgba(0,255,255,1)');
+	gradient.addColorStop(0.4, 'rgba(0,0,64,1)');
+	gradient.addColorStop(1, 'rgba(0,0,0,1)');
 
-				var context = canvas.getContext( '2d' );
-				var gradient = context.createRadialGradient( canvas.width / 2, canvas.height / 2, 0, canvas.width / 2, canvas.height / 2, canvas.width / 2 );
-				gradient.addColorStop( 0, 'rgba(255,255,255,1)' );
-				gradient.addColorStop( 0.2, 'rgba(0,255,255,1)' );
-				gradient.addColorStop( 0.4, 'rgba(0,0,64,1)' );
-				gradient.addColorStop( 1, 'rgba(0,0,0,1)' );
+	context.fillStyle = gradient;
+	context.fillRect(0, 0, canvas.width, canvas.height);
+	return canvas;
 
-				context.fillStyle = gradient;
-				context.fillRect( 0, 0, canvas.width, canvas.height );
-				return canvas;
+}
 
-			}
+function initParticle(particle, delay) {
 
-			function initParticle( particle, delay ) {
+	var particle = this instanceof THREE.Sprite ? this : particle;
+	var delay = delay !== undefined ? delay : 0;
 
-				var particle = this instanceof THREE.Sprite ? this : particle;
-				var delay = delay !== undefined ? delay : 0;
+	particle.position.set(0, 0, 0);
+	particle.scale.x = particle.scale.y = Math.random() * 32 + 16;
 
-                particle.position.set( 0, 0, 0 );
-				particle.scale.x = particle.scale.y = Math.random() * 32 + 16;
+	new TWEEN.Tween(particle)
+		.delay(delay)
+		.to({}, 10000)
+		.onComplete(initParticle)
+		.start();
 
-				new TWEEN.Tween( particle )
-					.delay( delay )
-					.to( {}, 10000 )
-					.onComplete( initParticle )
-					.start();
+	new TWEEN.Tween(particle.position)
+		.delay(delay)
+		.to({ x: Math.random() * 4000 - 2000, y: Math.random() * 1000 - 500, z: Math.random() * 4000 - 2000 }, 10000)
+		.start();
 
-				new TWEEN.Tween( particle.position )
-					.delay( delay )
-					.to( { x: Math.random() * 4000 - 2000, y: Math.random() * 1000 - 500, z: Math.random() * 4000 - 2000 }, 10000 )
-					.start();
+	new TWEEN.Tween(particle.scale)
+		.delay(delay)
+		.to({ x: 10, y: 10 }, 100000)
+		.start();
 
-				new TWEEN.Tween( particle.scale )
-					.delay( delay )
-					.to( { x: 0.01, y: 0.01 }, 100000 )
-					.start();
+}
 
-			}
+//
 
-			//
+function onDocumentMouseMove(event) {
 
-			function onDocumentMouseMove( event ) {
+	mouseX = event.clientX - windowHalfX;
+	mouseY = event.clientY - windowHalfY;
+}
 
-				mouseX = event.clientX - windowHalfX;
-				mouseY = event.clientY - windowHalfY;
-			}
+function onDocumentTouchStart(event) {
 
-			function onDocumentTouchStart( event ) {
+	if (event.touches.length == 1) {
 
-				if ( event.touches.length == 1 ) {
+		event.preventDefault();
 
-					event.preventDefault();
+		mouseX = event.touches[0].pageX - windowHalfX;
+		mouseY = event.touches[0].pageY - windowHalfY;
 
-					mouseX = event.touches[ 0 ].pageX - windowHalfX;
-					mouseY = event.touches[ 0 ].pageY - windowHalfY;
+	}
 
-				}
+}
 
-			}
+function onDocumentTouchMove(event) {
 
-			function onDocumentTouchMove( event ) {
+	if (event.touches.length == 1) {
 
-				if ( event.touches.length == 1 ) {
+		event.preventDefault();
 
-					event.preventDefault();
+		mouseX = event.touches[0].pageX - windowHalfX;
+		mouseY = event.touches[0].pageY - windowHalfY;
 
-					mouseX = event.touches[ 0 ].pageX - windowHalfX;
-					mouseY = event.touches[ 0 ].pageY - windowHalfY;
+	}
 
-				}
+}
 
-			}
+//
 
-			//
+function animate() {
 
-			function animate() {
+	requestAnimationFrame(animate);
 
-				requestAnimationFrame( animate );
+	render();
+	//stats.update();
 
-				render();
-				//stats.update();
+}
 
-			}
+function render() {
 
-			function render() {
+	TWEEN.update();
 
-				TWEEN.update();
+	camera.position.x += (mouseX - camera.position.x) * 0.05;
+	camera.position.y += (- mouseY - camera.position.y) * 0.05;
+	camera.lookAt(scene.position);
 
-				camera.position.x += ( mouseX - camera.position.x ) * 0.05;
-				camera.position.y += ( - mouseY - camera.position.y ) * 0.05;
-				camera.lookAt( scene.position );
+	renderer.render(scene, camera);
 
-				renderer.render( scene, camera );
-
-			}
+}
