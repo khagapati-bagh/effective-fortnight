@@ -1,0 +1,75 @@
+
+/* radhe */
+	/* Optional (for testing purpose) */
+
+
+
+/* NAV */
+      #navbar {
+        top: 0;
+        left: 0;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        overflow-x: hidden;
+        background: rgba(00,00,00,0.95);
+        z-index: 10;
+        transition: 5s;
+        padding-top: 60px;
+        text-align:center;
+      }
+      
+      .hide {
+        display: none;
+      }
+  #nav-btn{
+    cursor: pointer;
+    position: fixed;
+    background-color: white;
+    color: #777;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3);
+    border-radius:0px;
+    padding: 1em;
+    font-size: 1.5rem;
+    line-height: 0.7em;
+    z-index: 100;
+    transition: transform 300ms;
+    height:56px;
+  }
+/*----------------------*/
+
+#navbar{
+  width: 875px;
+  padding: 150px calc((100% - 875px) / 2);
+  transition: all 0.2s ease-in;
+}
+#navbar ul{
+  list-style: none;
+  margin:0px;
+  padding:0px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+#navbar ul li{
+  width:20%;
+  margin-bottom:20px;
+}
+#navbar ul li a{
+  display: inline-block;
+  padding: 20px 30px;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 2px;
+}
+#navbar ul li a:hover{
+  background:rgba(34,34,34,0.80);
+  color:yellow;
+}
+#navbar ul li a i{
+  display: block;
+  padding-bottom:10px;
+  font-size:54px;
+}
