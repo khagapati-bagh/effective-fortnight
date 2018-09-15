@@ -12,41 +12,6 @@
 	<link rel="stylesheet" type='text/css' href='css/header.css' />
 	<link rel="stylesheet" type='text/css' href='css/scroll.css' />
 	<link rel="stylesheet" type='text/css' href='css/particle.css' />
-	<script>
-		const NAV_OPENED_CLASS = "fa-th";
-		const NAV_CLOSED_CLASS = "fa-times";
-
-		window.onload = function () {
-			const navBtn = document.getElementById("nav-btn");
-			const classes = navBtn.classList;
-			const navbar = document.getElementById("navbar");
-
-			navBtn.addEventListener("click", function () {
-				if (classes.contains(NAV_OPENED_CLASS)) {
-					openNav();
-				} else {
-					closeNav();
-				}
-			});
-			const navLinks = document.getElementsByClassName("nav-link");
-			[...navLinks].forEach(function (elem) {
-				elem.addEventListener("click", function () {
-					closeNav();
-				});
-			});
-
-			function closeNav() {
-				classes.remove(NAV_CLOSED_CLASS);
-				classes.add(NAV_OPENED_CLASS);
-				navbar.classList.add("hide");
-			}
-			function openNav() {
-				classes.remove(NAV_OPENED_CLASS);
-				classes.add(NAV_CLOSED_CLASS);
-				navbar.classList.remove("hide");
-			}
-		};
-	</script>
 </head>
 
 <body>
@@ -55,19 +20,19 @@
 		<nav id="navbar" class="hide">
 			<ul>
 				<li>
-					<a href='#'><i class='fa fa-home'></i> <span>Home</span></a>
+					<a class='animated slideInUp' href='#'><i class='fa fa-home'></i> <span>Home</span></a>
 				</li>
 				<li>
-					<a href='#'><i class='fa fa-home'></i> <span>Events</span></a>
+					<a class='animated slideInUp' href='#'><i class='fa fa-home'></i> <span>Events</span></a>
 				</li>
 				<li>
-					<a href='#'><i class='fa fa-users'></i> <span>About Us</span></a>
+					<a class='animated slideInUp' href='#'><i class='fa fa-users'></i> <span>About Us</span></a>
 				</li>
 				<li>
-					<a href='#'><i class='fa fa-envelope'></i> <span>Contact Us</span></a>
+					<a class='animated slideInUp' href='#'><i class='fa fa-envelope'></i> <span>Contact Us</span></a>
 				</li>
 				<li>
-					<a href='#'><i class='fa fa-user-plus'></i> <span>Registration</span></a>
+					<a class='animated slideInUp' href='#'><i class='fa fa-user-plus'></i> <span>Registration</span></a>
 				</li>
 			</ul>
 		</nav>
@@ -97,7 +62,7 @@
 
 		<div id="control">
 			<div id="cal">
-				<div class="event animated slideInLeft" id="e1">
+				<div class="event animated" id="e1">
 					<div class="event-header">
 						<span>Registrations</span>
 					</div>
@@ -194,9 +159,7 @@
 	 crossorigin="anonymous"></script>
 
 	<script src="js/scroll.js"></script>
-	<script>
-		$("#footer").animateCss('bounse');
-	</script>
+	<script src="js/header-menu.js"></script>
 </body>
 
 </html>

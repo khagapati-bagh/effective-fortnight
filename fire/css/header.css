@@ -57,12 +57,48 @@
   margin-bottom:20px;
 }
 #navbar ul li a{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  top: auto;
+  position: relative;
+  background: rgba(34,34,34,0.80);
+  padding: 20px;
+  border-radius: 0px 5px;
   display: inline-block;
   padding: 20px 30px;
   color: #fff;
   font-size: 16px;
   text-decoration: none;
   border-radius: 2px;
+
+}
+#navbar ul li a::before,#navbar ul li a::after{
+    content:'';
+    position: absolute;
+    border-color: gold;
+    border-style: solid;
+}
+#navbar ul li a::before{
+    background: transparent;
+    margin-left: -30px;
+    margin-top: -30px;
+    width: 40px;
+    height: 40px;
+    border-width: 5px 0px 0px 5px;
+    display: flex;
+}
+#navbar ul li a::after{
+    background: transparent;
+    margin-top: 20px;
+    width: 40px;
+    height: 40px;
+    top: 100%;
+    margin-top: -35px;
+    left: 100%;
+    border-width: 0 5px 5px 0px;
+    margin-left: -35px;
 }
 #navbar ul li a:hover{
   background:rgba(34,34,34,0.80);

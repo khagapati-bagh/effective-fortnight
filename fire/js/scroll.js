@@ -24,7 +24,9 @@ $.fn.extend({
       return this;
     },
   });
-
+$(document).ready(function(){
+  $('#wrapper').addClass('animated fadeIn');
+})
 
 let s1 = $("#s1");
 let s2 = $("#s2");
